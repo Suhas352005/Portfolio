@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume | Suhas S Kattimani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+  
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin:0;
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      padding-bottom: 40px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #bbb;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #111;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      z-index: 9999;
+    }
+    .mobile-nav.active {
+      display: flex;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .mobile-nav a {
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .mobile-nav a:hover {
+      color: #bbb;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeSlideUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      user-select: none;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.3rem;
+      margin-top: 2.5rem;
+      user-select: none;
+    }
+    p, li {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #ddd;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    section.resume-section {
+      margin-bottom: 32px;
+    }
+
+
+    .resume-content {
+      background: #111;
+      padding: 28px 32px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+    }
+
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      color: #000;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 1.1rem;
+      margin: 2em auto 0;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 0 12px rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      gap: 8px;
+    }
+    .download-btn:hover,
+    .download-btn:focus {
+      background: #bbb;
+      color: #111;
+      box-shadow: 0 0 24px rgba(255,255,255,0.8);
+      transform: scale(1.05);
+      outline: none;
+    }
+    .material-icons.download-icon {
+      font-size: 24px;
+    }
+
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      main {
+        margin: 20px 12px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Suhas S Kattimani Portfolio">SSK</div>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" aria-current="page">Resume</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#xE5D2;</button>
+  </header>
+  <nav id="mobile-menu" class="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html" aria-current="page">Resume</a>
+  </nav>
+  <main>
+    <h1>Resume</h1>
+    <div class="resume-content">
+      <section class="resume-section" aria-label="Profile Summary">
+        <h2>Profile Summary</h2>
+        <p>Aspiring web developer currently pursuing a Bachelor of Technology in Information Science and Engineering at Presidency University, Bengaluru, with expected graduation June 2027. Passionate about building clean, responsive user interfaces with animations and modern practices. Skilled in HTML, CSS, JavaScript, actively learning React.js and backend fundamentals. Open to internship and junior developer roles.</p>
+      </section>
+      <section class="resume-section" aria-label="Internship Experience">
+        <h2>Internship Experience</h2>
+        <ul>
+          <li><strong>Frontend Web Developer Intern - CodeVertex (Remote)</strong> &mdash; July 2024 to September 2024
+            <ul>
+              <li>Developed responsive web pages using HTML, CSS, and JavaScript</li>
+              <li>Collaborated with UI/UX designers to translate designs into functional websites</li>
+              <li>Participated in code reviews and team meetings</li>
+              <li>Improved site performance and cross-browser compatibility</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="resume-section" aria-label="Education">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Bachelor of Technology (B.Tech), Information Science and Engineering</strong><br>Presidency University, Bengaluru (Expected Graduation: June 2027)</li>
+          <li><strong>Pre-University Course (PUC), Science Stream (PCMB)</strong><br>Vignaan Integrated PU College, Completed 2023</li>
+          <li><strong>High School (SSLC)</strong><br>Morarji Desai Model Residential School, Completed 2021</li>
+        </ul>
+      </section>
+      <section class="resume-section" aria-label="Projects">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Personal Portfolio Website</strong> &mdash; Designed and developed a responsive portfolio website showcasing skills and projects, built with HTML, CSS, and JavaScript including smooth scrolling and responsive UI.</li>
+          <li><strong>E-Commerce Website Clone</strong> &mdash; Created a functional clone of Amazon's homepage featuring product listings, navbar, cart UI with responsiveness and real-time interactions using HTML, CSS, and JavaScript.</li>
+        </ul>
+      </section>
+      <section class="resume-section" aria-label="Languages and Skills">
+        <h2>Languages & Skills</h2>
+        <ul>
+          <li>English, Kannada, Hindi</li>
+          <li>Web Development: HTML, CSS, JavaScript, React.js (in progress)</li>
+          <li>Frontend UI/UX Development and Responsive Design</li>
+          <li>Animations, Accessibility, Cross-browser Compatibility</li>
+        </ul>
+      </section>
+      <section class="resume-section" aria-label="Contact Information">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:suhaskattimanisk@gmail.com">suhaskattimanisk@gmail.com</a></p>
+        <p>Phone: +91 7411019262</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/suhas-sk" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/suhas-sk</a></p>
+      </section>
+      <a class="download-btn" href="Suhas_S_Kattimani_Resume.pdf" download aria-label="Download Resume PDF">
+        <span class="material-icons download-icon" aria-hidden="true">download</span> Download Resume
+      </a>
+    </div>
+  </main>
+  <script>
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true' || false;
+      toggleBtn.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('active');
+      mobileMenu.setAttribute('aria-hidden', expanded);
+    });
+
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', false);
+        mobileMenu.setAttribute('aria-hidden', true);
+      });
+    });
+  </script>
+</body>
+</html>
+
